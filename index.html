@@ -82,6 +82,21 @@ a:hover, a:focus { text-decoration: underline; }
 /* CSS:ABOUT-END */
 
 /* CSS:SKILLS-START */
+.section-skills .skills-wrap { display: grid; gap: 16px; align-items: start; }
+.section-skills .skills-content { display: grid; gap: 12px; }
+.section-skills p { margin: 0; }
+.section-skills .skill-buttons { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+.section-skills .btn-skill { 
+  background: rgba(14,165,182,0.12); 
+  color: #e5e7eb; 
+  border: 1px solid rgba(14,165,182,0.35); 
+}
+.section-skills .skills-media img { 
+  border-radius: 16px; 
+  border: 1px solid rgba(148,163,184,0.2); 
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+/* 保留原先示意用清單（若有其他區塊引用不受影響） */
 .skill-list { display: grid; gap: 10px; padding: 0; margin: 0; list-style: none; }
 .skill-pill {
   display: inline-block; padding: 8px 10px; border-radius: 999px;
@@ -113,6 +128,7 @@ a:hover, a:focus { text-decoration: underline; }
   .hero-wrap { grid-template-columns: 1.1fr 0.9fr; gap: 24px; }
   .hero-title { font-size: 2.4rem; }
   .section-about .about-wrap { grid-template-columns: 1fr 1fr; }
+  .section-skills .skills-wrap { grid-template-columns: 1fr 1fr; }
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
   .grid-md-2 { grid-template-columns: repeat(2, 1fr); }
 }
@@ -208,20 +224,31 @@ a:hover, a:focus { text-decoration: underline; }
         <!-- SECTION:SKILLS-START -->
         <section id="skills" class="section section-skills" aria-labelledby="skills-heading">
           <div class="container">
-            <h2 id="skills-heading" class="section-title">技能（之後會用 Section SDD 替換）</h2>
-            <p>
-              （占位內容）這裡將列出主要技術與工具（前端框架、版控、測試、無障礙等）。目前僅為示意。
-            </p>
-            <p class="muted">
-              之後會用 Section SDD 的 Prompt 產生新的 section，請把新的 section 程式碼整段貼在
-              「SECTION:SKILLS-START / SECTION:SKILLS-END」兩個註解中間，完全取代現在這一區。
-            </p>
-            <ul class="skill-list grid grid-md-2">
-              <li><span class="skill-pill">HTML / CSS（RWD）</span></li>
-              <li><span class="skill-pill">可存取性（a11y）</span></li>
-              <li><span class="skill-pill">版本控制（Git）</span></li>
-              <li><span class="skill-pill">測試觀念（E2E / 單元）</span></li>
-            </ul>
+            <h2 id="skills-heading" class="section-title">技能</h2>
+            <div class="skills-wrap">
+              <!-- 文字區：手機在上；平板以上位於左側 -->
+              <div class="skills-content">
+                <p class="lead">
+                  我學習前端約一個半月，已能以語意化 HTML 與 RWD-CSS 完成版面，掌握基礎 JavaScript 思維與 Git 版控流程，能把設計快速落地為可維護的頁面。
+                </p>
+                <p>
+                  延伸自我過往經驗：平面設計、咖啡廳店長經營、策展統籌、文案撰寫與商品開發，讓我在專案中兼顧溝通、視覺一致性與落地執行。
+                </p>
+                <div class="skill-buttons">
+                  <span class="btn btn-skill" role="button" aria-disabled="true">HTML / CSS（RWD）</span>
+                  <span class="btn btn-skill" role="button" aria-disabled="true">JavaScript（基礎）</span>
+                  <span class="btn btn-skill" role="button" aria-disabled="true">Git / GitHub</span>
+                </div>
+              </div>
+
+              <!-- 照片區：手機在下；平板以上位於右側 -->
+              <div class="skills-media">
+                <img 
+                  src="https://source.unsplash.com/1000x800/?programmer,engineer" 
+                  alt="撰寫前端程式碼的工程師示意照片" 
+                  loading="lazy">
+              </div>
+            </div>
           </div>
         </section>
         <!-- SECTION:SKILLS-END -->
